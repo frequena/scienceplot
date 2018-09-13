@@ -1,0 +1,512 @@
+tdm_remove <- removeSparseTerms(data_articles_nature_abstract_dtm, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+cluster <- try(hclust(dist_matrix, method = 'average'))
+validate(
+need(class(cluster) != "try-error", "No terms available. Please, increase the minimum frequency option.")
+)
+plot_cluster <-plot(cluster, cex = 0.6)
+tdm_remove <- removeSparseTerms(data_articles_nature_abstract_dtm, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+cluster <- try(hclust(dist_matrix, method = 'complete'))
+validate(
+need(class(cluster) != "try-error", "No terms available. Please, increase the minimum frequency option.")
+)
+plot_cluster <-plot(cluster, cex = 0.6)
+tdm_remove <- removeSparseTerms(data_articles_nature_abstract_dtm, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+cluster <- try(hclust(dist_matrix, method = 'complete'))
+validate(
+need(class(cluster) != "try-error", "No terms available. Please, increase the minimum frequency option.")
+)
+plot_cluster <-plot(cluster, cex = 0.6)
+tdm_remove <- removeSparseTerms(data_articles_nature_title, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+tdm_remove <- removeSparseTerms(data_articles_nature_title_dtm, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+cluster <- try(hclust(dist_matrix, method = 'complete'))
+plot_cluster <-plot(cluster, cex = 0.6)
+rect.hclust(plot_cluster, k = 4, border = 2:5)
+rect.hclust(plot_cluster, k = 2, border = 2:5)
+rect.hclust(plot_cluster, k = 4)
+rect.hclust(plot_cluster, k = 1)
+rect.hclust(plot_cluster)
+tdm_remove <- removeSparseTerms(data_articles_bioinformatics_abstract_dtm, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+cluster <- try(hclust(dist_matrix, method = 'complete'))
+plot_cluster <-plot(cluster, cex = 0.6)
+tdm_remove <- removeSparseTerms(data_articles_bioinformatics_abstract_dtm, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+cluster <- try(hclust(dist_matrix, method = 'complete'))
+plot_cluster <-plot(cluster, cex = 0.6)
+tdm_remove <- removeSparseTerms(data_articles_bioinformatics_abstract_dtm, sparse = 0.99)
+tdm_remove_matrix <-  as.matrix(tdm_remove)
+dist_matrix <- dist(scale(tdm_remove_matrix), 'euclidean')
+cluster <- try(hclust(dist_matrix, method = 'complete'))
+plot_cluster <-plot(cluster, cex = 0.6)
+library(tidytext)
+install.packages("tidytext")
+library(tidytext)
+shiny::runApp()
+data_NatureCellBio
+prueba <- data_NatureCellBio
+View(prueba)
+count(prueba$text, sort = TRUE)
+prueba %>%
+count(word, sort = TRUE)
+prueba %>%
+filter(n >= 250) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba %>%
+filter(n >= 5) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+names(prueba)
+prueba %>%
+filter(n >= 5) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = text), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba %>%
+filter(n >= 10) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = text), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba %>%
+filter(n >= 10) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = text), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+library(igraph)
+library(ggraph)
+install.packages("ggraph")
+install.packages("igraph")
+library(igraph)
+library(ggraph)
+devtools::install_github('thomasp85/ggraph')
+install.packages("udunits2")
+install.packages("udunits2")
+devtools::install_github('thomasp85/ggforce')
+install.packages("udunits2")
+prueba
+prueba2 <- prueba %>%
+unnest_tokens(word, text)
+View(prueba2)
+devtools::install_github('thomasp85/ggraph')
+install.packages("udunits2")
+devtools::install_github('thomasp85/ggraph')
+library(ggraph)
+prueba2
+rownames(prueba2)
+class(prueba2)[1]
+class(prueba2$date)
+prueba <- data_NatureCellBio
+install.packages("widyr")
+devtools::install_github('dgrtwo/widyr')
+library(widyr)
+prueba2 <- prueba %>%
+unnest_tokens(word, text) %>%
+pairwise_count(word, date, sort = T, upper = F)
+View(prueba2)
+prueba2 %>%
+filter(n >= 4) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = text), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 4) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5)
+prueba2 %>%
+filter(n >= 4) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = text), repel = TRUE)
+prueba2 %>%
+filter(n >= 4) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+names(prueba2)
+prueba2 %>%
+filter(n >= 4) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = FALSE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 4) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+View(data_PLOSCompBiol)
+View(articles_bioinformatics)
+prueba <- articles_bioinformatics
+prueba2 <- prueba %>%
+unnest_tokens(word, Title)
+prueba <- articles_bioinformatics
+prueba2 <- prueba %>%
+unnest_tokens(word, Title)
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title)
+View(prueba2)
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title) %>%
+pairwise_count(word, date, sort = T, upper = F)
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title) %>%
+pairwise_count(Abstract, date, sort = T, upper = F)
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title) %>%
+pairwise_count(rownames(prueba2), date, sort = T, upper = F)
+View(articles_CancerResrch)
+prueba2 <- prueba %>%
+unnest_tokens(word, Abstract)
+View(prueba2)
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Abstract) %>%
+pairwise_count(Title, date, sort = T, upper = F)
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Abstract) %>%
+pairwise_count(word, Title, sort = T, upper = F)
+View(prueba2)
+prueba2 %>%
+filter(n >= 600) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 200) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title)
+View(prueba2)
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title) %>%
+pairwise_count(word, Abstract, sort = T, upper = F)
+View(prueba2)
+stop_words
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title) %>%
+anti_join(stop_words)
+pairwise_count(word, Abstract, sort = T, upper = F)
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Title) %>%
+anti_join(stop_words) %>%
+pairwise_count(word, Abstract, sort = T, upper = F)
+View(prueba2)
+prueba2 %>%
+filter(n >= 200) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 5) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba <- articles_bioinformatics
+prueba$Title <- as.character(prueba$Title)
+prueba2 <- prueba %>%
+unnest_tokens(word, Abstract) %>%
+anti_join(stop_words) %>%
+pairwise_count(word, Title, sort = T, upper = F)
+prueba2 %>%
+filter(n >= 5) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 15) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+View(prueba2)
+prueba2 %>%
+filter(n >= 75) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 55) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 35) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 20) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba <- articles_PLOSCompBiol
+prueba <- articles_PLOSCompBiol
+prueba$Index.Keywords <- as.character(prueba$Index.Keywords)
+prueba2 <- prueba %>%
+unnest_tokens(word, Index.Keywords) %>%
+anti_join(stop_words) %>%
+pairwise_count(word, Title, sort = T, upper = F)
+prueba <- articles_PLOSCompBiol
+prueba$Index.Keywords <- as.character(prueba$Index.Keywords)
+View(prueba)
+prueba2 <- prueba %>%
+unnest_tokens(word, Index.Keywords)
+View(prueba2)
+prueba2 <- prueba %>%
+unnest_tokens(word, Index.Keywords) %>%
+# anti_join(stop_words) %>%
+pairwise_count(word, Title, sort = T, upper = F)
+prueba <- articles_PLOSCompBiol
+prueba$Index.Keywords <- as.character(prueba$Index.Keywords)
+prueba2 <- prueba %>%
+unnest_tokens(word, Index.Keywords) %>%
+# anti_join(stop_words) %>%
+pairwise_count(word, Abstract, sort = T, upper = F)
+prueba2 %>%
+filter(n >= 20) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 10) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+prueba2 %>%
+filter(n >= 5) %>%
+graph_from_data_frame() %>%
+ggraph(layout = "fr") +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+?ggraph
+prueba2 %>%
+filter(n >= 5) %>%
+graph_from_data_frame() %>%
+ggraph(layout = 'dendrogram') +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+library(igraph)
+library(ggraph)
+library(widyr)
+library(ggplot2)
+library(shinydashboard)
+library(wordcloud)
+library(lubridate)
+library(dplyr)
+library(ROAuth)
+library(stringr)
+library(httr)
+library(rtweet)
+library(plotly)
+library(tm)
+library(DT)
+library(topicmodels)
+library(factoextra)
+library(tidytext)
+prueba2 %>%
+filter(n >= 5) %>%
+graph_from_data_frame() %>%
+ggraph(layout = 'dendrogram') +
+geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+geom_node_point(color = "darkslategray4", size = 5) +
+geom_node_text(aes(label = name), repel = TRUE) +
+ggtitle("Word Network in NASA Dataset Titles") +
+theme_void()
+glimpse(prueba2)
+shiny::runApp()
+runApp()
+twitter_accounts_dtm
+runApp()
+twitter_accounts_dtm
+twitter_accounts_dtm
+data_embojournal_dtm
+data_embojournal
+shiny::runApp()
+View(data_TheLancet)
+runApp()
+View(articles_JAMA_current)
+journal_accounts_title_dtm
+runApp()
+runApp()
+runApp()
+View(articles_bioinformatics)
+journal_accounts_title_dtm
+View(articles_nature)
+runApp()
+unnest_tokens
+name_data <- gsub('_title_dtm', '', 'data_articles_nature_title_dtm')
+name_data
+name_data <- gsub('data_', '', name_data)
+name_data
+data <- get(name_data)
+data
+View(data)
+data_plot <- data %>%
+mutate(Title = as.character(Title))
+name_data <- gsub('_title_dtm', '', 'data_articles_nature_title_dtm')
+name_data <- gsub('data_', '', name_data)
+data <- get(name_data)
+data_plot <- data %>%
+mutate(Title = as.character(Title)) %>%
+unnest_tokens(word, Abstract) %>%
+anti_join(stop_words) %>%
+pairwise_count(word, Title, sort = T, upper = F)
+runApp()
+runApp()
+View(articles_PLOSGenetics)
+runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+stop_words
+runApp()
+journal_accounts_key_dtm
+journal_accounts_key_dtm[[1]]
+journal_accounts_key_dtm[[10]]
+journal_accounts_key_dtm[[13]]
+journal_accounts_key_dtm[[-13]]
+journal_accounts_key_dtm[-[13]]
+journal_accounts_key_dtm[[13]] <- NULL
+journal_accounts_key_dtm
+runApp()
+?geom_edge_link
+runApp()
+runApp()
+save.image('def_data.RData')
+runApp()
+runApp()
+View(articles_TheLancetInfDis)
+View(data_GenesDev)
+twitter_accounts_dtm
+runApp()
+runApp()
+runApp()
